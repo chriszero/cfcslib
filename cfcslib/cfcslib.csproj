@@ -36,9 +36,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Derviator.cs" />
+    <Compile Include="NumMath\Derviator.cs" />
+    <Compile Include="Filter\HighBand.cs" />
+    <Compile Include="Filter\LowBand1.cs" />
+    <Compile Include="Filter\LowBand2.cs" />
     <Compile Include="Helpers.cs" />
-    <Compile Include="Integrator.cs" />
+    <Compile Include="NumMath\Integrator.cs" />
     <Compile Include="PDController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

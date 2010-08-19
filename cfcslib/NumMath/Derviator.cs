@@ -3,7 +3,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Cfcslib {
+namespace Cfcslib.NumMath {
     /// <summary>
     /// Berechnet die Ableitung (Steigung)
     /// </summary>
@@ -30,23 +30,23 @@ namespace Cfcslib {
         /// </summary>
         /// <param name="K">Verstärkungsfaktor bzw, Multiplikator</param>
         public Derviator(double K) {
-            _k = K;
+            this._k = K;
         }
 
         public double Calculate(double input) {
             DateTime now = DateTime.Now;
-            _tc = now - _last;
-            _last = now;
+            this._tc = now - this._last;
+            this._last = now;
 
             double output = 0.0;
 
-            if (!_init) {
-                _init = true;
-                _old = input;
+            if (!this._init) {
+                this._init = true;
+                this._old = input;
             }
-            else if (_tc > TimeSpan.Zero) {
-                output = (input - _old) / _tc.Ticks * _k; // laut vorlage in PicoSekunden (1e^-6 µS)
-                _old = input;
+            else if (this._tc > TimeSpan.Zero) {
+                output = (input - this._old) / this._tc.Ticks * this._k; // laut vorlage in PicoSekunden (1e^-6 µS)
+                this._old = input;
             }
 
             return output;
