@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cfcslib", "cfcslib\cfcslib.csproj", "{8F4D6804-329A-420C-97C2-92BB6455A5D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visu", "Visu\Visu.csproj", "{0CEAD7BB-385D-4D03-B132-E076E1297A61}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{8F4D6804-329A-420C-97C2-92BB6455A5D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F4D6804-329A-420C-97C2-92BB6455A5D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F4D6804-329A-420C-97C2-92BB6455A5D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CEAD7BB-385D-4D03-B132-E076E1297A61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CEAD7BB-385D-4D03-B132-E076E1297A61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CEAD7BB-385D-4D03-B132-E076E1297A61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CEAD7BB-385D-4D03-B132-E076E1297A61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
