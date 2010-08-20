@@ -7,7 +7,7 @@ namespace Cfcslib.NumMath {
     /// <summary>
     /// Berechnet die Ableitung (Steigung)
     /// </summary>
-    internal class Derviator {
+    public class Derviator {
         /// <summary>
         /// Verstrichene Zeit seit letztem Aufruf
         /// </summary>
@@ -37,19 +37,20 @@ namespace Cfcslib.NumMath {
             DateTime now = DateTime.Now;
             this._tc = now - this._last;
             this._last = now;
+            return Calculate(input, this._tc.TotalMilliseconds);
+        }
 
-            double output = 0.0;
-
+        public double Calculate(double input, double dT) {
             if (!this._init) {
                 this._init = true;
                 this._old = input;
             }
             else if (this._tc > TimeSpan.Zero) {
-                output = (input - this._old) / this._tc.Ticks * this._k; // laut vorlage in PicoSekunden (1e^-6 µS)
+                _out = (input - this._old) / dT * this._k; // laut vorlage in PicoSekunden (1e^-6 µS)
                 this._old = input;
             }
 
-            return output;
+            return _out;
         }
     }
 }

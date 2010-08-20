@@ -12,14 +12,14 @@ namespace Cfcslib.Filter {
         private double _d;
         private double _i1, _i2;
 
-        private readonly PlainIntegrator _int1;
-        private readonly PlainIntegrator _int2;
+        private readonly Integrator _int1;
+        private readonly Integrator _int2;
 
         public LowBand2(double k, double d) {
             _k = k;
             _d = d;
-            _int1 = new PlainIntegrator();
-            _int2 = new PlainIntegrator();
+            _int1 = new Integrator(1.0);
+            _int2 = new Integrator(1.0);
         }
 
         public LowBand2(double d) : this(1.0, d) {
@@ -44,7 +44,7 @@ namespace Cfcslib.Filter {
                 _i1 = _out;
             }
             else {
-                double tn = t.TotalMilliseconds*1.0e-3;
+                double tn = t.TotalMilliseconds;//                *1.0e-3;
                 double tn2 = tn*tn;
                 _int1.Integrate(input*_k/tn2 - _i1*0.5*_d/tn - _i2/tn2, ref _i1);
                 _int2.Integrate(_i1, ref _i2);

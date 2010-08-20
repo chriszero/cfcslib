@@ -25,7 +25,7 @@ namespace Cfcslib.Filter {
                 _out = _k*input;
             }
             else {
-                _out = _out + (input*_k - _out)*(tx - _last).Ticks/t.Ticks *1.0e-3;
+                _out += (input * _k - _out) * (tx - _last).TotalSeconds / t.TotalSeconds*1.0e-3;
             }
             _last = tx;
             return _out;

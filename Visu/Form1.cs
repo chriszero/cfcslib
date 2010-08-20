@@ -10,11 +10,15 @@ using System.Windows.Forms;
 using Cfcslib.Filter;
 
 using ZedGraph;
+using Cfcslib.NumMath;
+using Cfcslib;
 
 namespace Visu {
     public partial class Form1 : Form {
         int tickStart;
-        private LowBand2 _lb1 = new LowBand2(1);
+        private HighBand _lb1 = new HighBand();
+        private PIDController _pid = new PIDController(1.0, 0.2, 1.0);
+        private PidControl _pid2 = new PidControl(1.0, 1.0, 0.2, 1.0);
 
         public Form1() {
             InitializeComponent();
@@ -31,11 +35,15 @@ namespace Visu {
             // The RollingPointPairList is an efficient storage class that always
             // keeps a rolling set of point data without needing to shift any data values
             RollingPointPairList list = new RollingPointPairList(1200);
+            RollingPointPairList list2 = new RollingPointPairList(1200);
 
             // Initially, a curve is added with no data points (list is empty)
             // Color is blue, and there will be no symbols
-            LineItem curve = myPane.AddCurve("Voltage", list, Color.Blue, SymbolType.None);
+            LineItem curve = myPane.AddCurve("Pid1 (Meiner)", list, Color.Blue, SymbolType.None);
             curve.Line.IsAntiAlias = true;
+
+            LineItem curve2 = myPane.AddCurve("Pid2", list2, Color.Red, SymbolType.None);
+            curve2.Line.IsAntiAlias = true;
 
             // Sample at 50ms intervals
             timer1.Interval = 50;
@@ -55,7 +63,7 @@ namespace Visu {
             // Save the beginning time for reference
             tickStart = Environment.TickCount;
         }
-
+        double last = 0;
         private void timer1_Tick(object sender, EventArgs e) {
             // Make sure that the curvelist has at least one curve
             if (zedGraphControl1.GraphPane.CurveList.Count <= 0)
@@ -63,11 +71,13 @@ namespace Visu {
 
             // Get the first CurveItem in the graph
             LineItem curve = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
+            LineItem curve2 = zedGraphControl1.GraphPane.CurveList[1] as LineItem;
             if (curve == null)
                 return;
 
             // Get the PointPairList
             IPointListEdit list = curve.Points as IPointListEdit;
+            IPointListEdit list2 = curve2.Points as IPointListEdit;
             // If this is null, it means the reference at curve.Points does not
             // support IPointListEdit, so we won't be able to modify it
             if (list == null)
@@ -76,10 +86,14 @@ namespace Visu {
             // Time is measured in seconds
             double time = (Environment.TickCount - tickStart) / 1000.0;
 
-            double outp = _lb1.Calculate(trackBar1.Value, TimeSpan.FromMilliseconds(1));
+            double outp = 0;
+            _pid.Calculate(trackBar1.Value, ref last);
+            _pid2.Update(trackBar1.Value, 65);
+            //last = outp;
             // 3 seconds per cycle
             // Math.Sin(2.0 * Math.PI * time / 3.0)
-            list.Add(time, outp);
+            list.Add(time, -last);
+            list2.Add(time, _pid2.Cv);
 
             // Keep the X scale at a rolling 30 second interval, with one
             // major step between the max X value and the end of the axis

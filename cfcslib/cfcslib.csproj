@@ -43,6 +43,8 @@
     <Compile Include="Helpers.cs" />
     <Compile Include="NumMath\Integrator.cs" />
     <Compile Include="PDController.cs" />
+    <Compile Include="PIController.cs" />
+    <Compile Include="PIDController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

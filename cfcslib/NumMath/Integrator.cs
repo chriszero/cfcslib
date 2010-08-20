@@ -2,30 +2,34 @@
 
 using System.Collections.Generic;
 using System.Text;
+using System.Diagnostics;
 
 namespace Cfcslib.NumMath {
-    internal class Integrator : PlainIntegrator {
+    /// <summary>
+    /// Integrator mit Limits
+    /// </summary>
+    public class LimIntegrator : Integrator {
 
         private double _outMin;
         private double _outMax;
 
-        public Integrator(double k, double outMax, double outMin)
+        public LimIntegrator(double k, double outMax, double outMin)
             : base(k) {
             this._outMax = outMax;
             this._outMin = outMin;
         }
 
-        public Integrator(double k) : this(k, double.MaxValue, double.MinValue) { }
-        public Integrator() : this(1.0) { }
+        public LimIntegrator(double k) : this(k, double.MaxValue, double.MinValue) { }
+        public LimIntegrator() : this(1.0) { }
 
         public new bool Integrate(double input, ref double y) {
             base.Integrate(input, ref y);
             bool lim;
-            if(y >= this._outMax){
+            if(y > this._outMax){
                 y = this._outMax;
                 lim = true;
             }
-            else if (y <= this._outMin) {
+            else if (y < this._outMin) {
                 y = this._outMin;
                 lim = true;
             }
@@ -36,30 +40,50 @@ namespace Cfcslib.NumMath {
         }
     }
 
-    internal class PlainIntegrator {
+    public class Integrator {
         private DateTime _last;
         private bool _init;
         private double _xLast;
+        private double _yLast;
 
         protected double _k;
 
-        public PlainIntegrator() : this(1.0) { }
+        public Integrator() : this(1.0) { }
 
-        public PlainIntegrator(double k) {
-            this._k = k;
+        public Integrator(double k) {
+            _k = k;
         }
 
+        /// <summary>
+        /// Integiert in Echtzeit
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
         public virtual void Integrate(double x, ref double y) {
             DateTime now = DateTime.Now;
-            if (!this._init) {
-                this._init = true;
-                this._xLast = x;
+            Integrate(x, ref y, (now - _last).TotalMilliseconds);
+            _last = now;
+        }
+
+        /// <summary>
+        /// Itegriert nach angegebendem dT
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y">In/Out des Letzten Ergebnisses</param>
+        /// <param name="dT">Integierzeit in Millisekunden</param>
+        public virtual void Integrate(double x, ref double y, double dT) {
+
+            if (!_init) {
+                _init = true;
+                _xLast = x;
             }
             else {
-                y = (x + this._xLast)*0.5e-3*(now - this._last).TotalMilliseconds*1.0e-3*this._k + y;
-                this._xLast = x;
+                // y = error * dt + y
+                _yLast += (x + this._xLast) * 0.5e-3 * dT * this._k;
+                y = _yLast;
+                //y += (x + this._xLast) * dT * this._k;
+                _xLast = x;
             }
-            this._last = now;
         }
     }
 }
