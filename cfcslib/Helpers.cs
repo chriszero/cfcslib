@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace Cfcslib {
-    internal static class Helpers {
+    public static class Helpers {
         /// <summary>
         /// linear transfer function which follows a linear function except for x is close to 0.
         /// Y = X if abs(x) > L otherwise its 0.

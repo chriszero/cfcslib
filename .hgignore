@@ -1,2 +1,4 @@
-glob:cfcslib/bin/*
-glob:cfcslib/obj/*
+glob:*resharper*
+glob:_ReSharper*
+glob:*/bin/*
+glob:*/obj/*
