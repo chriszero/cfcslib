@@ -19,16 +19,16 @@ namespace Cfcslib {
         }
 
         /// <summary>
-        /// lineare Übertragungsfunktion mit Totzone und Hys-
-        /// terese. Der Ausgang entspricht dem Eingangssignal, wenn der Absolutwert 
+        /// lineare Übertragungsfunktion mit Totzone und Hysterese.
+        /// Der Ausgang entspricht dem Eingangssignal, wenn der Absolutwert 
         /// des Eingangs größer als L ist.
         /// DEAD_ZONE2 = X wenn ABS(X) > L
         /// DEAD_ZONE2 = +/- L wenn ABS(X) <= L
         /// </summary>
         /// <param name="x"></param>
-        /// <param name="y">Rückgabewert des letzten durchlaufs</param>
         /// <param name="l">Totzone</param>
-        public static double DeadZone2(double x, ref double y, double l) {
+        /// <param name="y"></param>
+        public static double DeadZone2(double x, double l, double y) {
             if (Math.Abs(x) > l) {
                 y = x;
             }
@@ -40,5 +40,36 @@ namespace Cfcslib {
             }
             return y;
         }
+
+        public static double CtrlIn(double setPoint, double actual, double noise) {
+            return DeadZone(setPoint - actual, noise);
+        }
+
+        private static double Limit(double limL, double y, double limH, out bool limit) {
+            limit = true;
+            if (y < limL) {
+                return limL;
+            }
+            if (y > limH) {
+                return limH;
+            }
+            limit = false;
+            return y;
+        }
+
+        public static double CtrlOut(double cInput, double offset, double limitLow, double limitHigh) {
+            bool limit;
+            return CtrlOut(cInput, offset, 0, limitLow, limitHigh, false, out limit);
+        }
+
+        public static double CtrlOut(double cInput, double offset, double limitLow, double limitHigh, out bool limit) {
+            return CtrlOut(cInput, offset, 0, limitLow, limitHigh, false, out limit);
+        }
+
+        public static double CtrlOut(double cInput, double offset, double manInput, double limitLow, double limitHigh, bool manual, out bool limit) {
+            double y = (manual ? manInput : cInput) + offset;
+            return Limit(limitLow, y, limitHigh, out limit);
+        }
+
     }
 }
