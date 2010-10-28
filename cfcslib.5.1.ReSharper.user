@@ -1,0 +1,175 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="public" priority="24" />
+      <Item value="static" priority="6" />
+      <Item value="double" priority="65" />
+      <Item value="return" priority="12" />
+      <Item value="DeadZone`0" priority="0" />
+      <Item value="setPoint" priority="2" />
+      <Item value="actual" priority="2" />
+      <Item value="noise" priority="2" />
+      <Item value="bool" priority="9" />
+      <Item value="out" priority="4" />
+      <Item value="manual" priority="0" />
+      <Item value="manInput" priority="0" />
+      <Item value="cInput" priority="0" />
+      <Item value="offset" priority="1" />
+      <Item value="private" priority="18" />
+      <Item value="if" priority="9" />
+      <Item value="limL" priority="1" />
+      <Item value="else" priority="6" />
+      <Item value="limH" priority="1" />
+      <Item value="limit" priority="2" />
+      <Item value="true" priority="8" />
+      <Item value="false" priority="6" />
+      <Item value="Limit`0" priority="0" />
+      <Item value="limitLow" priority="2" />
+      <Item value="limitHigh" priority="2" />
+      <Item value="foo" priority="0" />
+      <Item value="PiController`0" priority="0" />
+      <Item value="this" priority="1" />
+      <Item value="kp" priority="2" />
+      <Item value="ki" priority="0" />
+      <Item value="Diff" priority="3" />
+      <Item value="Helpers`0" priority="3" />
+      <Item value="_limitLow" priority="9" />
+      <Item value="_limitHigh" priority="9" />
+      <Item value="internal" priority="0" />
+      <Item value="void" priority="4" />
+      <Item value="Piwl`0" priority="2" />
+      <Item value="DateTime`0" priority="5" />
+      <Item value="_inLast" priority="3" />
+      <Item value="_tLast" priority="2" />
+      <Item value="TimeSpan`0" priority="2" />
+      <Item value="_i" priority="7" />
+      <Item value="_tCycle" priority="3" />
+      <Item value="Init`0" priority="1" />
+      <Item value="input" priority="7" />
+      <Item value="_init" priority="4" />
+      <Item value="Reset" priority="1" />
+      <Item value="_tx" priority="2" />
+      <Item value="_p" priority="3" />
+      <Item value="_kp" priority="3" />
+      <Item value="_ki" priority="2" />
+      <Item value="ts" priority="0" />
+      <Item value="TicksPerMicrosecond" priority="0" />
+      <Item value="Limit" priority="7" />
+      <Item value="PidWL`0" priority="3" />
+      <Item value="new" priority="5" />
+      <Item value="_tn" priority="2" />
+      <Item value="_piwl" priority="2" />
+      <Item value="Piwl" priority="0" />
+      <Item value="NumMath" priority="0" />
+      <Item value="Derviator`0" priority="0" />
+      <Item value="_tv" priority="1" />
+      <Item value="_diff" priority="0" />
+      <Item value="_old" priority="0" />
+      <Item value="PidController`0" priority="0" />
+      <Item value="Controller" priority="0" />
+      <Item value="_pid" priority="0" />
+      <Item value="_limit" priority="1" />
+      <Item value="protected" priority="0" />
+      <Item value="base" priority="0" />
+      <Item value="tn" priority="0" />
+      <Item value="tv" priority="0" />
+      <Item value="override" priority="2" />
+      <Item value="TestMethod" priority="0" />
+      <Item value="Assert`0" priority="1" />
+      <Item value="a" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Cfcslib.Helpers">
+      <Item value="CtrlIn`0" priority="1" />
+      <Item value="CtrlOut`0" priority="1" />
+      <Item value="DeadZone`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.DateTime">
+      <Item value="Now" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.TimeSpan">
+      <Item value="Zero" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.TimeSpan">
+      <Item value="TotalMilliseconds" priority="0" />
+      <Item value="Ticks" priority="0" />
+      <Item value="TotalMicroseconds`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Cfcslib.Controller.Piwl">
+      <Item value="Calculate`0" priority="0" />
+      <Item value="Reset`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Cfcslib.NumMath.Derviator">
+      <Item value="Calculate`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Cfcslib.Controller.PidWL">
+      <Item value="Calculate`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Microsoft.VisualStudio.TestTools.UnitTesting.Assert">
+      <Item value="AreEqual`0" priority="1" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="0CEAD7BB-385D-4D03-B132-E076E1297A61/f:PIDControl.cs" caret="1051" fromTop="33" />
+      <File id="0CEAD7BB-385D-4D03-B132-E076E1297A61/f:Form1.cs" caret="3631" fromTop="32" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/f:Extensions.cs" caret="188" fromTop="8" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/f:PDController.cs" caret="0" fromTop="0" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/d:NumMath/f:Derivator.cs" caret="516" fromTop="14" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/d:Controller/f:PidController.cs" caret="381" fromTop="11" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/d:Controller/f:PidWL.cs" caret="3207" fromTop="80" />
+      <File id="B4ECDE81-0575-4EFE-8D10-A7F71154E3C9/f:AuthoringTests.txt" caret="0" fromTop="0" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/f:Helpers.cs" caret="1921" fromTop="38" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/d:Controller/f:PiWL.cs" caret="2419" fromTop="60" />
+      <File id="B4ECDE81-0575-4EFE-8D10-A7F71154E3C9/f:UnitTest1.cs" caret="2442" fromTop="31" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/d:NumMath/f:Derivator.cs" caret="1162" fromTop="18" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/d:NumMath/f:Derivator.cs" caret="1841" fromTop="38" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/d:NumMath/f:Derivator.cs" caret="270" fromTop="6" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/d:Controller/f:PidController.cs" caret="1664" fromTop="24" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/f:Helpers.cs" caret="1881" fromTop="21" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/f:Helpers.cs" caret="2321" fromTop="29" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/d:Controller/f:PidController.cs" caret="1664" fromTop="22" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/d:Controller/f:PidController.cs" caret="1664" fromTop="8" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/d:Controller/f:PidWL.cs" caret="3399" fromTop="24" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/d:Controller/f:PidWL.cs" caret="3399" fromTop="31" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/d:Controller/f:PidController.cs" caret="1664" fromTop="26" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/d:Controller/f:PidWL.cs" caret="3399" fromTop="32" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/d:Controller/f:PidWL.cs" caret="3399" fromTop="36" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/d:Controller/f:PidWL.cs" caret="3399" fromTop="30" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/d:Controller/f:PidController.cs" caret="1664" fromTop="29" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/d:Controller/f:PidController.cs" caret="1664" fromTop="8" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/d:Controller/f:PidController.cs" caret="1664" fromTop="32" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/d:Controller/f:PidWL.cs" caret="3399" fromTop="11" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/d:Controller/f:PidWL.cs" caret="1149" fromTop="9" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/d:Controller/f:PidWL.cs" caret="2621" fromTop="23" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/d:Controller/f:PidWL.cs" caret="2439" fromTop="15" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/d:Controller/f:PidWL.cs" caret="594" fromTop="16" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/d:Controller/f:PidWL.cs" caret="2999" fromTop="32" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/d:Controller/f:PidWL.cs" caret="3116" fromTop="36" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/d:Controller/f:PidController.cs" caret="1664" fromTop="39" />
+      <File id="8F4D6804-329A-420C-97C2-92BB6455A5D1/d:Controller/f:PidWL.cs" caret="3398" fromTop="80" />
+      <File id="B4ECDE81-0575-4EFE-8D10-A7F71154E3C9/f:UnitTest1.cs" caret="2367" fromTop="40" />
+      <File id="B4ECDE81-0575-4EFE-8D10-A7F71154E3C9/f:UnitTest1.cs" caret="1862" fromTop="7" />
+      <File id="B4ECDE81-0575-4EFE-8D10-A7F71154E3C9/f:UnitTest1.cs" caret="2293" fromTop="21" />
+      <File id="B4ECDE81-0575-4EFE-8D10-A7F71154E3C9/f:UnitTest1.cs" caret="2516" fromTop="35" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir>C:\Program Files (x86)\NUnit 2.5.3\bin\net-2.0\</NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+</Configuration>

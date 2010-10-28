@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using Cfcslib.Controller;
 using Cfcslib.Filter;
 
 using ZedGraph;
@@ -17,7 +17,7 @@ namespace Visu {
     public partial class Form1 : Form {
         int tickStart;
         private HighBand _lb1 = new HighBand();
-        private PIDController _pid = new PIDController(1.0, 0.2, 1.0);
+        private PidController _pid = new PidController(1.0, 0.2, 1.0);
         private PidControl _pid2 = new PidControl(1.0, 1.0, 0.2, 1.0);
 
         public Form1() {
@@ -87,12 +87,12 @@ namespace Visu {
             double time = (Environment.TickCount - tickStart) / 1000.0;
 
             double outp = 0;
-            _pid.Calculate(trackBar1.Value, ref last);
+            outp = _pid.Calculate(0, trackBar1.Value, 0, 0);
             _pid2.Update(trackBar1.Value, 65);
             //last = outp;
             // 3 seconds per cycle
             // Math.Sin(2.0 * Math.PI * time / 3.0)
-            list.Add(time, -last);
+            list.Add(time, outp);
             list2.Add(time, _pid2.Cv);
 
             // Keep the X scale at a rolling 30 second interval, with one
